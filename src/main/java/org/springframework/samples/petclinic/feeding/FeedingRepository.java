@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface FeedingRepository extends CrudRepository<Feeding,Integer>{
     List<Feeding> findAll();
+    
     @Query("SELECT ftype FROM FeedingType ftype ORDER BY ftype.name")
     List<FeedingType> findAllFeedingTypes();
     Optional<Feeding> findById(int id);
